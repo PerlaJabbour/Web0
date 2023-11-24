@@ -1,0 +1,15 @@
+<body>
+    <ul id="students"></ul>
+    <script>
+        var ul=document.getElementById('students');
+        fetch('https://training23.onrender.com/students')
+        .then(response=>response.json())
+        .then(json=>{
+            json.forEach(s => {
+                let li=document.createElement('li');
+                li.innerHTML=s.name;
+                ul.appendChild(li);                
+            });
+        })
+    </script>
+    </body>
